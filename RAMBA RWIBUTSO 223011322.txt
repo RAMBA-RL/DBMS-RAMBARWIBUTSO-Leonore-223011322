@@ -1,0 +1,208 @@
+mysql> CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE RUHANDE;
+Database changed
+mysql> CREATE TABLE NGOMA;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> CREATE TABLE NGOMA(ID VARCHAR(20),FNAME CHAR(9),LNAME CHAR(9),GENDER CHAR(1),PROVINCE CHAR(8),DISTRICT CHAR(8),SECTOR CHAR(7),CELL CHAR(8),EMAIL VARCHAR(10),PHONE VARCHAR(10));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00001','Ange','KAGAME','F','East','Bugesera','Juru','angekagame@gmail.com','0782222555');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> INSERT INTO NGOMA VALUES('00001','Ange','KAGAME','F','East','Bugesera','Juru','Rwezamenyo','angekagame@gmail.com','0782222555');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00001','Ange','KAGAME','M','West','Nyamasheke','Bweramvura','Buhoro','muganaanaclete@gmail.com','0785855775');
+Query OK, 1 row affected, 3 warnings (0.00 sec)
+
+mysql> DELETE FROM NGOMA WHERE CELL='Buhoro';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00002','Anaclete','MUGANA','M','West','Nyamasheke','Bweramvura','Buhoro','muganaanaclete@gmail.com','0785855775');
+Query OK, 1 row affected, 3 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00003','Sylivie','MWAMIYESU','F','South','Ruhango','Busasamana','Buguri','mwamiyesusylvie@gmail.com','0788878355');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00004','Charles','MUGEMANA','M','East','Kayonza','Nyamiyaga','Nyagasambu','mugemanacharles@gmail.com','0784571805');
+Query OK, 1 row affected, 3 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00005','Agnes','MWIZA','F','North','Burera','Rugogwe','Mbavu','mwizaagness@gmail.com','07809776665');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00006','Rebecca','MUSEMAKWELI','F','South','Bugaragara','Munazi','Menyo','rebeccamusemakweli78@gmail.com','07878977765');
+Query OK, 1 row affected, 4 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00007','Ericola','SHUKULU','M','Kigali','Gasabo','Gisozi','Gisabo','shukuluericola8@gmail.com','07878781009');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00008','Ruth','MUGISHA','F','North','Musanze','Ruriba','Kamuhoza','ruthmugisha@gmail.com','07899978459');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00008','Chris','MUNEZA','M','Kigali','Gasabo','Murera','Nkingo','munezachriss@gmail.com','07867777899');
+Query OK, 1 row affected, 2 warnings (0.01 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00010','Anges','MUZAZA','F','South','Gacurabwenge','Gihinga','Ryabitana','muzazaanges@gmail.com','078786777599');
+Query OK, 1 row affected, 4 warnings (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+| ID    | FNAME    | LNAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL     | EMAIL      | PHONE      |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+| 00001 | Ange     | KAGAME    | F      | East     | Bugesera | Juru    | Rwezamen | angekagame | 0782222555 |
+| 00002 | Anaclete | MUGANA    | M      | West     | Nyamashe | Bweramv | Buhoro   | muganaanac | 0785855775 |
+| 00003 | Sylivie  | MWAMIYESU | F      | South    | Ruhango  | Busasam | Buguri   | mwamiyesus | 0788878355 |
+| 00004 | Charles  | MUGEMANA  | M      | East     | Kayonza  | Nyamiya | Nyagasam | mugemanach | 0784571805 |
+| 00005 | Agnes    | MWIZA     | F      | North    | Burera   | Rugogwe | Mbavu    | mwizaagnes | 0780977666 |
+| 00006 | Rebecca  | MUSEMAKWE | F      | South    | Bugaraga | Munazi  | Menyo    | rebeccamus | 0787897776 |
+| 00007 | Ericola  | SHUKULU   | M      | Kigali   | Gasabo   | Gisozi  | Gisabo   | shukulueri | 0787878100 |
+| 00008 | Ruth     | MUGISHA   | F      | North    | Musanze  | Ruriba  | Kamuhoza | ruthmugish | 0789997845 |
+| 00008 | Chris    | MUNEZA    | M      | Kigali   | Gasabo   | Murera  | Nkingo   | munezachri | 0786777789 |
+| 00010 | Anges    | MUZAZA    | F      | South    | Gacurabw | Gihinga | Ryabitan | muzazaange | 0787867775 |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> DELETE FROM NGOMA WHERE CELL='Kamuhoza';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO NGOMA VALUES('00009','Rachid','MUHIZI','M','Ngororero','Gasabo','Gahuru','Ryabizi','muhizirachid@gmail.com','0786775819');
+Query OK, 1 row affected, 2 warnings (0.00 sec)
+
+mysql> SELECT *FROM NGOMA;
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+| ID    | FNAME    | LNAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL     | EMAIL      | PHONE      |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+| 00001 | Ange     | KAGAME    | F      | East     | Bugesera | Juru    | Rwezamen | angekagame | 0782222555 |
+| 00002 | Anaclete | MUGANA    | M      | West     | Nyamashe | Bweramv | Buhoro   | muganaanac | 0785855775 |
+| 00003 | Sylivie  | MWAMIYESU | F      | South    | Ruhango  | Busasam | Buguri   | mwamiyesus | 0788878355 |
+| 00004 | Charles  | MUGEMANA  | M      | East     | Kayonza  | Nyamiya | Nyagasam | mugemanach | 0784571805 |
+| 00005 | Agnes    | MWIZA     | F      | North    | Burera   | Rugogwe | Mbavu    | mwizaagnes | 0780977666 |
+| 00006 | Rebecca  | MUSEMAKWE | F      | South    | Bugaraga | Munazi  | Menyo    | rebeccamus | 0787897776 |
+| 00007 | Ericola  | SHUKULU   | M      | Kigali   | Gasabo   | Gisozi  | Gisabo   | shukulueri | 0787878100 |
+| 00009 | Rachid   | MUHIZI    | M      | Ngororer | Gasabo   | Gahuru  | Ryabizi  | muhizirach | 0786775819 |
+| 00008 | Chris    | MUNEZA    | M      | Kigali   | Gasabo   | Murera  | Nkingo   | munezachri | 0786777789 |
+| 00010 | Anges    | MUZAZA    | F      | South    | Gacurabw | Gihinga | Ryabitan | muzazaange | 0787867775 |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD RELIGION CHAR(10);
+Query OK, 10 rows affected (0.07 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+----------+
+| ID    | FNAME    | LNAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL     | EMAIL      | PHONE      | RELIGION |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+----------+
+| 00001 | Ange     | KAGAME    | F      | East     | Bugesera | Juru    | Rwezamen | angekagame | 0782222555 | NULL     |
+| 00002 | Anaclete | MUGANA    | M      | West     | Nyamashe | Bweramv | Buhoro   | muganaanac | 0785855775 | NULL     |
+| 00003 | Sylivie  | MWAMIYESU | F      | South    | Ruhango  | Busasam | Buguri   | mwamiyesus | 0788878355 | NULL     |
+| 00004 | Charles  | MUGEMANA  | M      | East     | Kayonza  | Nyamiya | Nyagasam | mugemanach | 0784571805 | NULL     |
+| 00005 | Agnes    | MWIZA     | F      | North    | Burera   | Rugogwe | Mbavu    | mwizaagnes | 0780977666 | NULL     |
+| 00006 | Rebecca  | MUSEMAKWE | F      | South    | Bugaraga | Munazi  | Menyo    | rebeccamus | 0787897776 | NULL     |
+| 00007 | Ericola  | SHUKULU   | M      | Kigali   | Gasabo   | Gisozi  | Gisabo   | shukulueri | 0787878100 | NULL     |
+| 00009 | Rachid   | MUHIZI    | M      | Ngororer | Gasabo   | Gahuru  | Ryabizi  | muhizirach | 0786775819 | NULL     |
+| 00008 | Chris    | MUNEZA    | M      | Kigali   | Gasabo   | Murera  | Nkingo   | munezachri | 0786777789 | NULL     |
+| 00010 | Anges    | MUZAZA    | F      | South    | Gacurabw | Gihinga | Ryabitan | muzazaange | 0787867775 | NULL     |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+----------+
+10 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET RELIGION='CATHOLIC' WHERE LNAME='MUGEMANA';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET RELIGION='ISLAM' WHERE LNAME='MUZAZA';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET RELIGION='ADVENTIST' WHERE LNAME='KAGAME';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET RELIGION='RESTORATION' WHERE LNAME='MWIZA';
+Query OK, 1 row affected, 1 warning (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 1
+
+mysql> ALTER TABLE NGOMA DROP EMAIL;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *FROM NGOMA;
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+| ID    | FNAME    | LNAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL     | PHONE      | RELIGION   |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+| 00001 | Ange     | KAGAME    | F      | East     | Bugesera | Juru    | Rwezamen | 0782222555 | ADVENTIST  |
+| 00002 | Anaclete | MUGANA    | M      | West     | Nyamashe | Bweramv | Buhoro   | 0785855775 | NULL       |
+| 00003 | Sylivie  | MWAMIYESU | F      | South    | Ruhango  | Busasam | Buguri   | 0788878355 | NULL       |
+| 00004 | Charles  | MUGEMANA  | M      | East     | Kayonza  | Nyamiya | Nyagasam | 0784571805 | CATHOLIC   |
+| 00005 | Agnes    | MWIZA     | F      | North    | Burera   | Rugogwe | Mbavu    | 0780977666 | RESTORATIO |
+| 00006 | Rebecca  | MUSEMAKWE | F      | South    | Bugaraga | Munazi  | Menyo    | 0787897776 | NULL       |
+| 00007 | Ericola  | SHUKULU   | M      | Kigali   | Gasabo   | Gisozi  | Gisabo   | 0787878100 | NULL       |
+| 00009 | Rachid   | MUHIZI    | M      | Ngororer | Gasabo   | Gahuru  | Ryabizi  | 0786775819 | NULL       |
+| 00008 | Chris    | MUNEZA    | M      | Kigali   | Gasabo   | Murera  | Nkingo   | 0786777789 | NULL       |
+| 00010 | Anges    | MUZAZA    | F      | South    | Gacurabw | Gihinga | Ryabitan | 0787867775 | ISLAM      |
++-------+----------+-----------+--------+----------+----------+---------+----------+------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ID,FNAME,LNAME,PROVINCE,PHONE FROM NGOMA;
++-------+----------+-----------+----------+------------+
+| ID    | FNAME    | LNAME     | PROVINCE | PHONE      |
++-------+----------+-----------+----------+------------+
+| 00001 | Ange     | KAGAME    | East     | 0782222555 |
+| 00002 | Anaclete | MUGANA    | West     | 0785855775 |
+| 00003 | Sylivie  | MWAMIYESU | South    | 0788878355 |
+| 00004 | Charles  | MUGEMANA  | East     | 0784571805 |
+| 00005 | Agnes    | MWIZA     | North    | 0780977666 |
+| 00006 | Rebecca  | MUSEMAKWE | South    | 0787897776 |
+| 00007 | Ericola  | SHUKULU   | Kigali   | 0787878100 |
+| 00009 | Rachid   | MUHIZI    | Ngororer | 0786775819 |
+| 00008 | Chris    | MUNEZA    | Kigali   | 0786777789 |
+| 00010 | Anges    | MUZAZA    | South    | 0787867775 |
++-------+----------+-----------+----------+------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE PROVINCE='South' OR ID='0003';
++-------+---------+-----------+--------+----------+----------+---------+----------+------------+----------+
+| ID    | FNAME   | LNAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL     | PHONE      | RELIGION |
++-------+---------+-----------+--------+----------+----------+---------+----------+------------+----------+
+| 00003 | Sylivie | MWAMIYESU | F      | South    | Ruhango  | Busasam | Buguri   | 0788878355 | NULL     |
+| 00006 | Rebecca | MUSEMAKWE | F      | South    | Bugaraga | Munazi  | Menyo    | 0787897776 | NULL     |
+| 00010 | Anges   | MUZAZA    | F      | South    | Gacurabw | Gihinga | Ryabitan | 0787867775 | ISLAM    |
++-------+---------+-----------+--------+----------+----------+---------+----------+------------+----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT *FROM NGOMA WHERE PROVINCE='SOUTH' AND ID='00003';
++-------+---------+-----------+--------+----------+----------+---------+--------+------------+----------+
+| ID    | FNAME   | LNAME     | GENDER | PROVINCE | DISTRICT | SECTOR  | CELL   | PHONE      | RELIGION |
++-------+---------+-----------+--------+----------+----------+---------+--------+------------+----------+
+| 00003 | Sylivie | MWAMIYESU | F      | South    | Ruhango  | Busasam | Buguri | 0788878355 | NULL     |
++-------+---------+-----------+--------+----------+----------+---------+--------+------------+----------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
